@@ -21,8 +21,3 @@ print(("%.1s %.9s") % ( asteriscos, pi ),("%.2s %.8s") % ( asteriscos, pi ), ("%
 #print(frase)
 
 
-
-#print("(%1s)" % ( asteriscos, pi ))
-
-#print("(%.15s) (%.5s)" % ( stringValue, stringValue ))
-
