@@ -19,5 +19,3 @@ print(("%.1s %.9s") % ( asteriscos, pi ),("%.2s %.8s") % ( asteriscos, pi ), ("%
     #frase = frase + "%.[i]s %.[9-1]s" % ( asteriscos, pi )
 
 #print(frase)
-
-
