@@ -25,15 +25,15 @@ todos = [
 
 #Escriba un código en python que determine cual grupo de personas contiene la mayor de todas las alturas de todas las personas
 
-altura = 0
+altura_max = 0
 mayor_altura= 0
 numero_grupo= 0
 grupo = ''
 for i in todos:
-    altura= max(i)
+    altura_max= max(i)
     numero_grupo = numero_grupo + 1
-    if altura > mayor_altura:
-        mayor_altura = altura
+    if altura_max > mayor_altura:
+        mayor_altura = altura_max
         grupo = 'Grupo ' + str(numero_grupo)
 
 print('Ejercio 2\nGrupo con mayor altura: ',grupo)
