@@ -52,16 +52,10 @@ print('esto es suma:', b)
 
 
 
-dict_funciones = {'promedio': lambda x,y,z: (x+y+z)/3, 'suma' : (lambda x,y,z: x+y+z), 'multi': (lambda x,y,z: x*y*z) }
+dict_funciones = {'promedio': lambda a,b,c,d: (a+b+c)/d, 'suma' : (lambda x,y,z: x+y+z), 'multi': (lambda x,y,z: x*y*z) }
 
 print(dict_funciones)
 
-
-'''
-print(dict_funciones['promedio'](b[1][0],b[1][1],b[1][2]))
-print(dict_funciones['suma'](b[2][0],b[2][1],b[2][2]))
-print(dict_funciones['multi'](b[3][0],b[3][1],b[3][2]))
-'''
 
 
 #Parte 2
@@ -69,7 +63,7 @@ print(dict_funciones['multi'](b[3][0],b[3][1],b[3][2]))
 
 #1. El promedio de la cantidad miles de colones en débito: cuánto tienen en promedio todas las personas.
 
-print('¿Cuánto tienen en promedio todas las personas?:',dict_funciones['promedio'](b[1][0],b[1][1],b[1][2]))
+print('¿Cuánto tienen en promedio todas las personas?:',dict_funciones['promedio'](b[1][0],b[1][1],b[1][2],len(b[1])))
 
 #2. La suma de todas las deudas
 
@@ -85,5 +79,5 @@ print('Multiplicacion de creditos:',dict_funciones['multi'](b[2][0],b[2][1],b[2]
 
 print('este codigo de abajo me da este error si se descomenta pero si lo corro mas arriba si corre: TypeError: float object is not subscriptable pero si lo corro antes si funciona')
 
-'''b[2] = list(map(lambda x: x*1.20, b[2]))
-print('Creditos actualizados:', b)'''
+b[2] = list(map(lambda x: x*1.20, b[2]))
+print('Creditos actualizados:', b)
