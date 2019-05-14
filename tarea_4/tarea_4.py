@@ -22,7 +22,7 @@ b #sea b la tabla resultante luego de aplicar transpuesta
 #Parte 1
 #Contruya un diccionario de funciones matematicas (utilizando funciones lambda) entre todos los números de la lista tales como:
 
-
+'''
 #Promedio
 
 prom_saldos = lambda x : sum(x)/len(x)
@@ -36,16 +36,6 @@ multi = lambda x,y,z : x*y*z
 c = multi(b[1][0], b[1][1], b[1][2])
 print('esto es mult:',c)
 
-'''
-def multi_cred(cred):
-    result = 1
-    for i in cred:
-        result = result * i
-    return result
-
-c = multi_cred(b[2])
-print('esto es mult:',c)
-'''
 
 
 #La suma
@@ -54,15 +44,24 @@ sum_deudas = lambda x : sum(x)
 b  = sum_deudas(b[3])
 print('esto es suma:', b)
 
+'''
+
+#Diccionario de funciones
+
+#dict_funciones = {'promedio':a, 'suma':b, 'multiplicacion':c}
 
 
-#dict_funciones = {'promedio':lambda: sum(b[1])/len(b[1])}
 
-
-dict_funciones = {'promedio':a, 'suma':b, 'multiplicacion':c}
+dict_funciones = {'promedio': lambda x,y,z: (x+y+z)/3, 'suma' : (lambda x,y,z: x+y+z), 'multi': (lambda x,y,z: x*y*z) }
 
 print(dict_funciones)
 
+
+'''
+print(dict_funciones['promedio'](b[1][0],b[1][1],b[1][2]))
+print(dict_funciones['suma'](b[2][0],b[2][1],b[2][2]))
+print(dict_funciones['multi'](b[3][0],b[3][1],b[3][2]))
+'''
 
 
 #Parte 2
@@ -70,15 +69,15 @@ print(dict_funciones)
 
 #1. El promedio de la cantidad miles de colones en débito: cuánto tienen en promedio todas las personas.
 
-print('¿Cuánto tienen en promedio todas las personas?:',dict_funciones['promedio'])
+print('¿Cuánto tienen en promedio todas las personas?:',dict_funciones['promedio'](b[1][0],b[1][1],b[1][2]))
 
 #2. La suma de todas las deudas
 
-print('Suma de todas las deudas:',dict_funciones['suma'])
+print('Suma de todas las deudas:',dict_funciones['suma'](b[3][0],b[3][1],b[3][2]))
 
 #3. la multiplicación de todos los crédito entre si
 
-print('Multiplicacion de creditos:',dict_funciones['multiplicacion'])
+print('Multiplicacion de creditos:',dict_funciones['multi'](b[2][0],b[2][1],b[2][2]))
 
 
 #Parte 3
