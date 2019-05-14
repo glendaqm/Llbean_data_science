@@ -76,13 +76,31 @@ print('Pacientes mayores:',mayores)
 print('Pacientes menores:',menores)
 
 
-
 #Quinta Pregunta
 #Suponga que se atienden con orden de prioridad por gravedad de consulta, empezando por los que tienen dolor y
 # luego por edad (mas viejo al joven), empezando por el adulto mayor. Ordene la lista empenzando por los
 # que tienen mayor prioridad.
 
+agenda_hospital2 = []
+agenda_hospital3 = []
+agenda_hospital4 = []
+agenda2 = []
+agenda3= []
+for lista in agenda_hospital:
+    if 'dolor' in lista:
+        agenda_hospital2.append(lista)
+    else:
+        agenda_hospital3.append(lista)
 
+sorted(agenda_hospital2,key=lambda x: x[3],reverse=True)
+print('lista solo dolor ordenada', agenda_hospital2)
+print('lista sin dolor', agenda_hospital3)
+agenda3.append(agenda_hospital3.sort(key=lambda x: x[3],reverse=True))
+print('lista sin dolor ordenada', agenda3)
+agenda_hospital4.extend(agenda2)
+print('lista con primeros valores ordenados', agenda_hospital4)
+agenda_hospital4.extend(agenda3)
+print('Lista completa ordenado padecimiento y edad:',agenda_hospital4)
 
 #Sexta pregunta
 #Suponga que los que tienen dolor mueren :( Como queda la lista de pacientes vivos por atender ordenados por orden de edad desde el joven al viejo.
