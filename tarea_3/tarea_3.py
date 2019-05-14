@@ -81,30 +81,35 @@ print('Pacientes menores:',menores)
 # luego por edad (mas viejo al joven), empezando por el adulto mayor. Ordene la lista empenzando por los
 # que tienen mayor prioridad.
 
-agenda_hospital2 = []
-agenda_hospital3 = []
+agenda_dolor = []
+agenda_sin_dolor = []
 agenda_hospital4 = []
 agenda2 = []
 agenda3= []
+
 for lista in agenda_hospital:
     if 'dolor' in lista:
-        agenda_hospital2.append(lista)
+        agenda_dolor.append(lista)
     else:
-        agenda_hospital3.append(lista)
+        agenda_sin_dolor.append(lista)
 
-sorted(agenda_hospital2,key=lambda x: x[3],reverse=True)
-print('lista solo dolor ordenada', agenda_hospital2)
-print('lista sin dolor', agenda_hospital3)
-agenda3.append(agenda_hospital3.sort(key=lambda x: x[3],reverse=True))
-print('lista sin dolor ordenada', agenda3)
-agenda_hospital4.extend(agenda2)
+sorted(agenda_dolor,key=lambda x: x[3],reverse=True)
+print('lista solo dolor ordenada', agenda_dolor)
+sorted(agenda_sin_dolor,key=lambda x: x[3], reverse=True)
+
+print('lista sin dolor ordenada', agenda_sin_dolor)
+
+agenda_hospital4.extend(agenda_dolor)
 print('lista con primeros valores ordenados', agenda_hospital4)
-agenda_hospital4.extend(agenda3)
+agenda_hospital4.extend(agenda_sin_dolor)
 print('Lista completa ordenado padecimiento y edad:',agenda_hospital4)
 
 #Sexta pregunta
-#Suponga que los que tienen dolor mueren :( Como queda la lista de pacientes vivos por atender ordenados por orden de edad desde el joven al viejo.
+#Suponga que los que tienen dolor mueren :( Como queda la lista de pacientes vivos por atender
+# ordenados por orden de edad desde el joven al viejo.
 
+#solo_vivos = list(map(agenda_hospital.remove('dolor'),agenda_hospital))
+#print(solo_vivos)
 
 #Segunda parte
 
