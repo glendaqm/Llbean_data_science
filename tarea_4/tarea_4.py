@@ -77,7 +77,7 @@ print('Multiplicacion de creditos:',dict_funciones['multi'](b[2][0],b[2][1],b[2]
 #Parte 3
 #Actualice (en la tabla general)los valores de los créditos aplicando un impuesto del 20% (esto es multiplicar por 1.2) a toda la fila de créditos usando el diccionario de funciones.
 
-print('este codigo de abajo me da este error si se descomenta pero si lo corro mas arriba si corre: TypeError: float object is not subscriptable pero si lo corro antes si funciona')
+
 
 b[2] = list(map(lambda x: x*1.20, b[2]))
 print('Creditos actualizados:', b)
