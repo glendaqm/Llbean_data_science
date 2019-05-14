@@ -15,7 +15,7 @@ def transpuesta(hoja_calculo):
 b = transpuesta(hoja_calculo)
 b #sea b la tabla resultante luego de aplicar transpuesta
 
-#Parte 3 - actualizar los creditos con 20%, PROFE: si lo corro aqui si funciona pero al final no
+#Parte 3 - actualizar los creditos con 20%, si lo corro aqui si funciona pero al final no
 #b[2] = list(map(lambda x: x*1.20, b[2]))
 #print('Creditos actualizados:', b)
 
@@ -32,11 +32,6 @@ print('esto es promedio:',a)
 
 #La Multiplicacion
 
-multi = lambda x,y,z : x*y*z
-c = multi(b[1][0], b[1][1], b[1][2])
-print('esto es mult:',c)
-
-'''
 def multi_cred(cred):
     result = 1
     for i in cred:
@@ -45,7 +40,6 @@ def multi_cred(cred):
 
 c = multi_cred(b[2])
 print('esto es mult:',c)
-'''
 
 
 #La suma
@@ -56,7 +50,7 @@ print('esto es suma:', b)
 
 
 
-#dict_funciones = {'promedio':lambda: sum(b[1])/len(b[1])}
+#dict_funciones = {'prom_saldos':lambda: sum(b[1])/len(b[1])}
 
 
 dict_funciones = {'promedio':a, 'suma':b, 'multiplicacion':c}
@@ -84,7 +78,7 @@ print('Multiplicacion de creditos:',dict_funciones['multiplicacion'])
 #Parte 3
 #Actualice (en la tabla general)los valores de los créditos aplicando un impuesto del 20% (esto es multiplicar por 1.2) a toda la fila de créditos usando el diccionario de funciones.
 
-print('este codigo de abajo me da este error si se descomenta pero si lo corro mas arriba si corre: TypeError: float object is not subscriptable pero si lo corro antes si funciona')
+print('este codigo me da error: TypeError: float object is not subscriptable pero si lo corro antes si funciona')
 
 '''b[2] = list(map(lambda x: x*1.20, b[2]))
 print('Creditos actualizados:', b)'''
