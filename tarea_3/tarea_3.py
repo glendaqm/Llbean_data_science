@@ -108,10 +108,15 @@ print('Lista completa ordenado padecimiento y edad:',agenda_hospital4)
 #Suponga que los que tienen dolor mueren :( Como queda la lista de pacientes vivos por atender
 # ordenados por orden de edad desde el joven al viejo.
 
+
 for i in agenda_hospital:
-    print(i)
-    #solo_vivos = list(map(i.remove('dolor'),i))
-#print(solo_vivos)
+    lista = list(i)
+    if 'dolor' in lista:
+        agenda_hospital.remove(i)
+    pass
+print('lista sin dolor!',agenda_hospital)
+
+
 
 #Segunda parte
 
