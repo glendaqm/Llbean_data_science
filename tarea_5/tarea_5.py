@@ -60,7 +60,6 @@ def borrarPaciente (paciente, listaPacientes):
     return listaPacientes
 
 def repEnfTratadas(listaPacientes):
-    #pregunta: inicializar en [] es necesario?
     enfermedades = []
     for i in listaPacientes:
         enfermedades.append(i.listaEnfermedades)
@@ -96,21 +95,50 @@ Paciente3.add_enfermedad('Anemia')
 Paciente3.add_medicamento('Melatonina')
 Paciente3.add_medicamento('Pastillas de Hierro')
 
+#Ingreso de un paciente nuevo
 listaPacientes1 = []
 listaPacientes1 = agregarPaciente(Paciente1,listaPacientes1)
 listaPacientes1 = agregarPaciente(Paciente2, listaPacientes1)
 listaPacientes1 = agregarPaciente(Paciente3, listaPacientes1)
 
+
+#Borrado de un paciente
 listaPacientes1 = borrarPaciente(Paciente1, listaPacientes1)
 
 
+#Agregar más enfermedades en un paciente en particular
+Paciente2.add_enfermedad('Insomnio')
+
+Paciente2.add_medicamento('Melatonina')
+
+
+#Generar reporte de las enfermedades tratadas en la clínica
 print('Reporte Enfermedades Tratadas: ', repEnfTratadas(listaPacientes1))
 
+
+#Generar reporte de los medicamentos entregados en la clínica
 print('Reporte Medicamentos Entregados: ', repMedEntregados(listaPacientes1))
 
-'''
-listaPacientes = {
-    "id":1234, "nombre": 'Glenda', "apellido":'Quesada',"tel":8311,"dir":'Alajuela',"enfermedades":'demencia y presion alta', "medicamentos":'naturales'
-  }
 
-'''
+#Comparar 2 pacientes en particular: cuales enfermedades tienen en común.
+
+def coincidencias(a, b):
+    a = set(a)
+    b = set(b)
+    return list(b & a)
+
+print('Enfermedades en común entre pacientes',Paciente2.nombre,'y',Paciente3.nombre,':',coincidencias(Paciente2.listaEnfermedades, Paciente3.listaEnfermedades))
+
+print('Medicamentos en común entre pacientes',Paciente2.nombre,'y',Paciente3.nombre,':',coincidencias(Paciente2.listaMedicamentos, Paciente3.listaMedicamentos))
+
+
+def diferentes(a, b):
+    a = set(a)
+    b = set(b)
+    return [list(b - a), list(a - b)]
+
+# Cuales no?. Lo mismo con los medicamentos.
+
+print('Enfermedades distintas entre pacientes',Paciente2.nombre,'y',Paciente3.nombre,':',diferentes(Paciente2.listaEnfermedades, Paciente3.listaEnfermedades))
+
+print('Medicamentos distintos entre pacientes',Paciente2.nombre,'y',Paciente3.nombre,':',diferentes(Paciente2.listaMedicamentos, Paciente3.listaMedicamentos))
