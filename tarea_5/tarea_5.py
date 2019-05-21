@@ -63,15 +63,14 @@ def repEnfTratadas(listaPacientes):
     #pregunta: inicializar en [] es necesario?
     enfermedades = []
     for i in listaPacientes:
-        pacienteTemp = paciente(i)
-        enfermedades.append(pacienteTemp.listaEnfermedades)
+        enfermedades.append(i.listaEnfermedades)
     return enfermedades
 
 
 def repMedEntregados(listaPacientes):
+    medicamentos = []
     for i in listaPacientes:
-        pacienteTemp = paciente(i)
-        medicamentos=medicamentos.append(pacienteTemp.listaMedicamentos)
+        medicamentos.append(i.listaMedicamentos)
     return medicamentos
 
 
