@@ -37,7 +37,6 @@ dataframe = pd.DataFrame(columns=r.json()['results'][0].keys())
 
 print(df.head())
 
-pass
 
 #json_normalize(r)
 
