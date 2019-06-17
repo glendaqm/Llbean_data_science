@@ -2,40 +2,37 @@ import requests
 import pandas as pd
 import numpy as np
 import json
-#from token import token
 
 
-#import json
-#from token import token
-#from pandas.io.json import json_normalize
 
-#hacer un request y guardarlo en objeto r que es el response
-#r = requests.get('https://api.github.com/events')
-#verificar el status code del request, 200 es bueno
-#r.status_code
-#obtener la repuesta en forma de json
-#r.json()
+params = '110870778'
 
-
-params = {'country': 'AR'}
-
-r = requests.get('https://api.openaq.org/v1/cities', params)
-
+r = requests.get('http://127.0.0.1:5000/user/110870778')
 
 print(r.status_code)
 
-records = r.json()['results']
-print(records)
-print(len(records))
-
-df = pd.DataFrame(records)
-
-pass
-
-dataframe = pd.DataFrame(columns=r.json()['results'][0].keys())
+info_emp = r.json()
+print(info_emp)
+print(len(info_emp))
 
 
-print(df.head())
+#Un dataframe no es tan efectivo como un dictionario para obtener los valores y pasarlos al word
+
+#Convert a JSON string to pandas object with read_json
+
+df3 = pd.DataFrame(pd.read_json(info_emp, typ='series').to_frame())
+
+print(df3.head())
+
+
+
+#df = pd.DataFrame(records)
+
+
+#dataframe = pd.DataFrame(columns=r.json()[0].keys())
+
+
+
 
 
 #json_normalize(r)
