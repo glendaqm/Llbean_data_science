@@ -34,6 +34,16 @@ empleados = [
         "puesto": "Asistente Administrativa",
         "departamento":"Recursos Humanos",
         "salarioBruto":"100,000"
+    },
+    {
+        "cedula": "110250162",
+        "nombre": "Esteban",
+        "apellido1": "Chavarria",
+        "apellido2": "Vega",
+        "fecha ingreso":"13 de Mayo del 2019",
+        "puesto": "Sourcing Manager",
+        "departamento":"Global Procurement",
+        "salarioBruto":"500,000"
     }
 ]
 
