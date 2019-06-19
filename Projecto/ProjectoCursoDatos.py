@@ -2,7 +2,10 @@ import requests
 import pandas as pd
 import numpy as np
 import json
+import num2words
 
+
+#Funcion llamada del API
 
 
 params = '110870778'
@@ -25,13 +28,16 @@ df3 = pd.DataFrame(pd.read_json(info_emp, typ='series').to_frame())
 print(df3.head())
 
 
-
 #df = pd.DataFrame(records)
 
 
 #dataframe = pd.DataFrame(columns=r.json()[0].keys())
 
 
+#Funcion para insertar info en Doc de word
+
+#
+#SalarioNetoLetras = num2words(SalarioNeto,lang=es)
 
 
 
