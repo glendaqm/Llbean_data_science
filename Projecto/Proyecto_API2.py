@@ -15,7 +15,7 @@ empleados = [
         "nombre": "Glenda",
         "apellido1": "Quesada",
         "apellido2": "Monge",
-        "fecha ingreso": "21 de Agosto del 2006",
+        "fecha_ingreso": "21 de Agosto del 2006",
         "puesto": "IS Manager III",
         "departamento":"Information Services",
         "salarioBruto":"300,000"
@@ -25,7 +25,7 @@ empleados = [
         "nombre": "Juan",
         "apellido1": "Perez",
         "apellido2": "Perez",
-        "fecha ingreso":"10 de Noviembre del 2002",
+        "fecha_ingreso":"10 de Noviembre del 2002",
         "puesto": "Sr. Programmer",
         "departamento":"Information Services",
         "salarioBruto":"200,000"
@@ -35,7 +35,7 @@ empleados = [
         "nombre": "Julia",
         "apellido1": "Monge",
         "apellido2": "Quesada",
-        "fecha ingreso":"16 de Junio del 2019",
+        "fecha_ingreso":"16 de Junio del 2019",
         "puesto": "Asistente Administrativa",
         "departamento":"Recursos Humanos",
         "salarioBruto":"100,000"
@@ -45,7 +45,7 @@ empleados = [
         "nombre": "Esteban",
         "apellido1": "Chavarria",
         "apellido2": "Vega",
-        "fecha ingreso":"13 de Mayo del 2019",
+        "fecha_ingreso":"13 de Mayo del 2019",
         "puesto": "Sourcing Manager",
         "departamento":"Global Procurement",
         "salarioBruto":"500,000"
