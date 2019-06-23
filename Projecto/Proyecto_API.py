@@ -1,6 +1,8 @@
 from flask import Flask, json
 from flask_restful import Api, Resource, reqparse
 
+#Creates the Flask application object, which contains data about the application and also methods (object functions)
+# that tell the application to do certain actions. The last line, app.run(), is one such method.
 app = Flask(__name__)
 api = Api(app)
 
@@ -48,9 +50,13 @@ empleados = [
 ]
 
 class Empleado(Resource):
+
+    #def __init__(self, ced):
+        #self.ced = ced
+
+
     def get(self, cedula):
         for empleado in empleados:
-            pass
             if(cedula == empleado["cedula"]):
                 #converts from Python to JSON
                 json_data = json.dumps(empleado)
@@ -62,4 +68,15 @@ class Empleado(Resource):
 
 api.add_resource(Empleado, "/user/<string:cedula>")
 
+#add_resource(resource, *urls, **kwargs)
+#Adds a resource to the api.
+
+#Parameters:
+#resource (Type[Resource]) – the class name of your resource
+#urls (str) – one or more url routes to match for the resource, standard flask routing rules apply. Any url variables will be passed to the resource method as args.
+#endpoint (str) – endpoint name (defaults to Resource.__name__.lower() Can be used to reference this route in fields.Url fields
+#resource_class_args (tuple) – args to be forwarded to the constructor of the resource.
+#resource_class_kwargs (dict) – kwargs to be forwarded to the constructor of the resource.
+
+#A method that runs the application server. Debug= True: if your code is malformed, you’ll see an error when you visit your app
 app.run(debug=True)
