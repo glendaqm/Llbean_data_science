@@ -18,7 +18,7 @@ empleados = [
         "fecha_ingreso": "21 de Agosto del 2006",
         "puesto": "IS Manager III",
         "departamento":"Information Services",
-        "salarioBruto":"300,000"
+        "salarioBruto":300000
     },
     {
         "cedula": 110001000,
@@ -28,7 +28,7 @@ empleados = [
         "fecha_ingreso":"10 de Noviembre del 2002",
         "puesto": "Sr. Programmer",
         "departamento":"Information Services",
-        "salarioBruto":"200,000"
+        "salarioBruto":200000
     },
     {
         "cedula": 900010783,
@@ -38,7 +38,7 @@ empleados = [
         "fecha_ingreso":"16 de Junio del 2019",
         "puesto": "Asistente Administrativa",
         "departamento":"Recursos Humanos",
-        "salarioBruto":"100,000"
+        "salarioBruto":100000
     },
     {
         "cedula": 110250162,
@@ -48,7 +48,7 @@ empleados = [
         "fecha_ingreso":"13 de Mayo del 2019",
         "puesto": "Sourcing Manager",
         "departamento":"Global Procurement",
-        "salarioBruto":"500,000"
+        "salarioBruto":500000
     }
 ]
 

@@ -24,14 +24,9 @@ print(r.status_code)
 
 #se crea un diccionario con el json que viene del response para la cedula consultada
 dict_emp = {}
-dict_emp = r.json()
+#esto lo que va a hacer es quitar el primer
+dict_emp = r.json()[-1]
 print(dict_emp)
-
-otrodict = {'cedula':'110870778'}
-print('dict otro cedula:', otrodict['cedula'])
-
-print('diccionario: ',dict_emp)
-#print('dict cedula:', dict_emp['apellido1'])
 
 
 template = "Constancia_salarial_template.docx"
@@ -72,22 +67,36 @@ def calcSalarioNeto(salarioBruto) :
     salarioNeto = salarioBruto - caja - renta
     return salarioNeto
 
+'''
+
+dict_emp['salarioNeto']= 50000
+#dict_emp['salarioNeto']=calcSalarioNeto(dict_emp['salarioBruto'])
+
+netoLetras = num2words.num2words(dict_emp['salarioNeto'],lang='es')
+brutoLetras = num2words.num2words(dict_emp['salarioBruto'],lang='es')
+
+print('bruto', brutoLetras)
+
+print(document.get_merge_fields())
+
 
 document.merge(
 
-    Cedula=dict_emp['cedula'],
+    Cedula=str(dict_emp['cedula']),
     Departamento=dict_emp['departamento'],
-    SalarioBruto=dict_emp['salarioBruto'],
+    SalarioBruto=str(dict_emp['salarioBruto']),
     Puesto=dict_emp['puesto'],
     NombreEmpleado=dict_emp['nombre']+' '+dict_emp['apellido1']+' '+dict_emp['apellido2'],
-    FechaIngreso=dict_emp[''],
-    SalarioNeto= calcSalarioNeto(dict_emp['salarioBruto']),
-    SalarioNetoLetras=num2words(dict_emp['salarioNeto'],lang='es'),
-    SalarioBrutoLetras=num2words(dict_emp['salarioBruto'],lang='es'))
+    FechaIngreso=dict_emp['fecha_ingreso'],
+    #calcSalarioNeto(dict_emp['salarioBruto']),
+    SalarioNeto= str(dict_emp['salarioNeto']),
+    SalarioNetoLetras=str(netoLetras) + ' colones',
+    SalarioBrutoLetras=str(brutoLetras)+' colones'
+)
 
 
 document.write('test-output.docx')
-'''
+
 
 #Un dataframe no es tan efectivo como un dictionario para obtener los valores y pasarlos al word
 
